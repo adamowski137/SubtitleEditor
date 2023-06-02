@@ -1,0 +1,15 @@
+C:\Users\adam\Desktop\projekty\SubtitleEditor\SubR\bin\Debug\net6.0-windows\SubR.deps.json
+C:\Users\adam\Desktop\projekty\SubtitleEditor\SubR\bin\Debug\net6.0-windows\SubR.dll
+C:\Users\adam\Desktop\projekty\SubtitleEditor\SubR\bin\Debug\net6.0-windows\SubR.pdb
+C:\Users\adam\Desktop\projekty\SubtitleEditor\SubR\bin\Debug\net6.0-windows\plugins.dll
+C:\Users\adam\Desktop\projekty\SubtitleEditor\SubR\bin\Debug\net6.0-windows\plugins.pdb
+C:\Users\adam\Desktop\projekty\SubtitleEditor\SubR\obj\Debug\net6.0-windows\SubR.csproj.AssemblyReference.cache
+C:\Users\adam\Desktop\projekty\SubtitleEditor\SubR\obj\Debug\net6.0-windows\SubR.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\adam\Desktop\projekty\SubtitleEditor\SubR\obj\Debug\net6.0-windows\SubR.AssemblyInfoInputs.cache
+C:\Users\adam\Desktop\projekty\SubtitleEditor\SubR\obj\Debug\net6.0-windows\SubR.AssemblyInfo.cs
+C:\Users\adam\Desktop\projekty\SubtitleEditor\SubR\obj\Debug\net6.0-windows\SubR.csproj.CoreCompileInputs.cache
+C:\Users\adam\Desktop\projekty\SubtitleEditor\SubR\obj\Debug\net6.0-windows\SubR.csproj.CopyComplete
+C:\Users\adam\Desktop\projekty\SubtitleEditor\SubR\obj\Debug\net6.0-windows\SubR.dll
+C:\Users\adam\Desktop\projekty\SubtitleEditor\SubR\obj\Debug\net6.0-windows\refint\SubR.dll
+C:\Users\adam\Desktop\projekty\SubtitleEditor\SubR\obj\Debug\net6.0-windows\SubR.pdb
+C:\Users\adam\Desktop\projekty\SubtitleEditor\SubR\obj\Debug\net6.0-windows\ref\SubR.dll

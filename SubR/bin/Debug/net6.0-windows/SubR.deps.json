@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "SubR/1.0.0": {
+        "dependencies": {
+          "plugins": "1.0.0"
+        },
+        "runtime": {
+          "SubR.dll": {}
+        }
+      },
+      "plugins/1.0.0": {
+        "runtime": {
+          "plugins.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "SubR/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "plugins/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

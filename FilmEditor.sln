@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33122.133
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FilmEditor", "FilmEditor.csproj", "{2939026E-E5DD-4DAD-BE85-518FF92CB110}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FilmEditor", "FilmEditor\FilmEditor.csproj", "{7C27AB95-BF5E-4147-9EFA-9C8133781C18}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "plugins", "plugins\plugins.csproj", "{4548BF36-87CF-4F5A-88BE-29F40D5FF8FD}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SubR", "SubR\SubR.csproj", "{3903AAB0-AD14-4081-8021-B1E7AF62FB36}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +15,18 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{2939026E-E5DD-4DAD-BE85-518FF92CB110}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2939026E-E5DD-4DAD-BE85-518FF92CB110}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2939026E-E5DD-4DAD-BE85-518FF92CB110}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2939026E-E5DD-4DAD-BE85-518FF92CB110}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C27AB95-BF5E-4147-9EFA-9C8133781C18}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C27AB95-BF5E-4147-9EFA-9C8133781C18}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C27AB95-BF5E-4147-9EFA-9C8133781C18}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C27AB95-BF5E-4147-9EFA-9C8133781C18}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4548BF36-87CF-4F5A-88BE-29F40D5FF8FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4548BF36-87CF-4F5A-88BE-29F40D5FF8FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4548BF36-87CF-4F5A-88BE-29F40D5FF8FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4548BF36-87CF-4F5A-88BE-29F40D5FF8FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3903AAB0-AD14-4081-8021-B1E7AF62FB36}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3903AAB0-AD14-4081-8021-B1E7AF62FB36}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3903AAB0-AD14-4081-8021-B1E7AF62FB36}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3903AAB0-AD14-4081-8021-B1E7AF62FB36}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

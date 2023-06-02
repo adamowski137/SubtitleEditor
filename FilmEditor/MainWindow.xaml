@@ -1,0 +1,163 @@
+﻿<Window x:Class="FilmEditor.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FilmEditor"
+        mc:Ignorable="d"
+        Title="Subtitle Composer" Height="800" Width="1280"
+        MinHeight="480" MinWidth="640" WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <local:TimeSpanConverter x:Key="converter" />
+        <local:TimeSpanToDoubleConverter x:Key="timespanToDouble" />
+        <local:DurationConverter x:Key="durationConverter" />
+        <BitmapImage x:Key="playImage"  UriSource="/Resources/play.png" />
+        <BitmapImage x:Key="pauseImage"  UriSource="/Resources/pause.png" />
+        <BitmapImage x:Key="stopImage"  UriSource="/Resources/stop.png" />
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="5"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="5"/>
+            <RowDefinition Height="100"/>
+        </Grid.RowDefinitions>
+        <Menu Grid.Row="0">
+            <MenuItem Header="File">
+                <MenuItem Header="Open" Name="OpenFilm" Click="Open_Click"/>
+                <MenuItem Header="Exit" Name="Exit" Click="Exit_Click" />
+            </MenuItem>
+            <MenuItem Header="Subtitles">
+                <MenuItem Header="Open" Name="Open"/>
+                <MenuItem Header="Save" Name="Save"/>
+                <MenuItem Header="Save Translation" Name="Save_Translation" IsEnabled="False"/>
+                <MenuItem Header="Translation" Name="Translation" IsCheckable="True" Click="Translation_Click"/>
+            </MenuItem>
+            <MenuItem Header="Help">
+                <MenuItem Header="About" Name="About"  Click="About_Click"/>
+            </MenuItem>
+        </Menu>
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="30"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0" Background="Black">
+                <MediaElement Name="MediaPlayer" Visibility="Visible"  
+                              PreviewMouseWheel="MediaPlayer_PreviewMouseWheel" MouseLeftButtonUp="MediaPlayer_MouseLeftButtonUp" 
+                              LoadedBehavior="Manual" Loaded="MediaPlayer_Loaded" UnloadedBehavior="Manual" Stretch="Uniform" MediaOpened="MediaPlayer_MediaOpened"/>
+                <TextBlock Name="SubtitleTextBlock" HorizontalAlignment="Center" VerticalAlignment="Bottom" Foreground="White" Height="auto" Padding="5" FontSize="24">
+                    <TextBlock.Background>
+                        <SolidColorBrush Color="Black" Opacity="0.5"/>
+                    </TextBlock.Background>
+                </TextBlock>
+            </Grid>
+            <StatusBar Grid.Row="1" >
+                <StatusBar.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="30"/>
+                                <ColumnDefinition Width="30"/>
+                                <ColumnDefinition Width="30"/>
+                                <ColumnDefinition Width="auto"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="50"/>
+                            </Grid.ColumnDefinitions>
+                        </Grid>
+                    </ItemsPanelTemplate>
+                </StatusBar.ItemsPanel>
+                <StatusBarItem Grid.Column="0">
+                    <Button  VerticalAlignment="Center" Name="Start" Click="Start_Click">
+                        <Image Source="{StaticResource playImage}" />
+                    </Button>
+                </StatusBarItem>
+                <StatusBarItem Grid.Column="1">
+                    <Button VerticalAlignment="Center" Name="Pause" Click="Pause_Click">
+                        <Image Source="{StaticResource pauseImage}" />
+                    </Button>
+                </StatusBarItem>
+                <StatusBarItem Grid.Column="2">
+                    <Button   VerticalAlignment="Center" Name="Stop" Click="Stop_Click">
+                        <Image Source="{StaticResource stopImage}" />
+                    </Button>
+                </StatusBarItem>
+                <StatusBarItem Grid.Column="3">
+                    <TextBlock  Name="CurrentTime" Text="00:00:00.00"/>
+                </StatusBarItem>
+                <StatusBarItem Grid.Column="4" HorizontalContentAlignment="Stretch">
+                    <Slider  VerticalAlignment="Center" Minimum="0" HorizontalAlignment="Stretch"
+                            Name="Slider" Thumb.DragStarted="Slider_DragStarted" Thumb.DragCompleted="Slider_DragCompleted" ValueChanged="Slider_ValueChanged"/>
+                </StatusBarItem>
+                <StatusBarItem Grid.Column="5" HorizontalContentAlignment="Stretch">
+                    <ProgressBar Name="VolumeBar" VerticalAlignment="Center" Height="20" Maximum="1" Minimum="0"/>
+                </StatusBarItem>
+            </StatusBar>
+        </Grid>
+        <GridSplitter Grid.Row="2" HorizontalAlignment="Stretch" />
+        <DataGrid Grid.Row="3" Name="SubtitleDataTable" CanUserSortColumns="False" 
+                  AddingNewItem="SubtitleDataTable_AddingNewItem" CanUserAddRows="True" 
+                  AutoGenerateColumns="False" SelectionChanged="SubtitleDataTable_Selected">
+            <DataGrid.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="Add" Name="ContextMenuAdd" Click="ContextMenuAdd_Click"/>
+                    <MenuItem Header="Add After" Name="ContextMenuAddAfter" Click="ContextMenuAddAfter_Click"/>
+                    <MenuItem Header="Delete" Name="ContextMenuDelete" Click="ContextMenuDelete_Click"/>
+                </ContextMenu>
+            </DataGrid.ContextMenu>
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Show Time" Width="auto" Binding="{Binding Converter={StaticResource converter}, Path=ShowTime, UpdateSourceTrigger=PropertyChanged}" />
+                <DataGridTextColumn Header="Hide Time" Width="auto" Binding="{Binding Converter={StaticResource converter}, Path=HideTime, UpdateSourceTrigger=PropertyChanged}"/>
+                <DataGridTextColumn Header="Text" Width="50*" Binding="{Binding Path=Text, UpdateSourceTrigger=PropertyChanged}"/>
+                <DataGridTextColumn Header="Translation" Width="50*" Binding="{Binding Path=Translation, UpdateSourceTrigger=PropertyChanged}" Visibility="Collapsed"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <GridSplitter Grid.Row="4" HorizontalAlignment="Stretch"/>
+        <Grid Grid.Row="5">
+            <Grid.ColumnDefinitions >
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition Width="80*"/>
+            </Grid.ColumnDefinitions>
+            <GroupBox Grid.Column="0" >
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Label Grid.Row="0" Grid.Column="0">Show</Label>
+                    <Label Grid.Row="1" Grid.Column="0">Hide</Label>
+                    <Label Grid.Row="2" Grid.Column="0">Duration</Label>
+                    <TextBox Grid.Row="0" Grid.Column="1" Margin="7" Text="{Binding ElementName=SubtitleDataTable, Path=SelectedItem.ShowTime, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource converter}}"/>
+                    <TextBox Grid.Row="1" Grid.Column="1" Margin="7" Text="{Binding ElementName=SubtitleDataTable, Path=SelectedItem.HideTime,UpdateSourceTrigger=PropertyChanged, Mode=TwoWay, Converter={StaticResource converter}}"/>
+                    <TextBox Grid.Row="2" Grid.Column="1" Margin="7" >
+                        <TextBox.Text>
+                            <MultiBinding Converter="{StaticResource durationConverter}" UpdateSourceTrigger="PropertyChanged">
+                                <Binding ElementName="SubtitleDataTable" Path="SelectedItem.ShowTime" Mode="TwoWay"/>
+                                <Binding ElementName="SubtitleDataTable" Path="SelectedItem.HideTime" Mode="TwoWay"/>
+                            </MultiBinding>
+                        </TextBox.Text>
+                    </TextBox>
+                </Grid>
+            </GroupBox>
+            <Grid Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Name="FirstColumn" Width="*"/>
+                    <ColumnDefinition Name="SecondColumn" Width="0"/>
+                </Grid.ColumnDefinitions>
+                <GroupBox Name="TextGroupBox" Grid.Column="0" Header="{Binding ElementName=SubtitleDataTable, Path=SelectedItem.Text.Length, UpdateSourceTrigger=PropertyChanged}" HeaderStringFormat="Text: {0} characters">
+                    <TextBox Text="{Binding ElementName=SubtitleDataTable, Path=SelectedItem.Text, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"  TextAlignment="Center" Width="auto" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto"/>
+                </GroupBox>
+                <GroupBox Name="TranslationGroupBox" Grid.Column="1" Header="{Binding ElementName=SubtitleDataTable, Path=SelectedItem.Translation.Length }" HeaderStringFormat="Translation: {0} characters" Visibility="Collapsed">
+                    <TextBox Text="{Binding ElementName=SubtitleDataTable, Path=SelectedItem.Translation, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" TextAlignment="Center" Width="auto" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto"/>
+                </GroupBox>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>
