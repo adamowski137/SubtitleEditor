@@ -4,6 +4,8 @@
              xmlns:local="clr-namespace:FilmEditor"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <BitmapImage x:Key="playImage"  UriSource="/Resources/play.png"/>
+        <BitmapImage x:Key="pauseImage"  UriSource="/Resources/pause.png" />
+        <BitmapImage x:Key="stopImage"  UriSource="/Resources/stop.png" />
     </Application.Resources>
 </Application>

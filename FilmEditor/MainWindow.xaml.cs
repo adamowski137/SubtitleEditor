@@ -64,7 +64,8 @@ namespace FilmEditor
 
             try
             {
-                foreach(var file in Directory.GetFiles("C:\\Users\\adam\\Desktop\\projekty\\SubtitleEditor\\FilmEditor\\plugins"))
+                var str = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.FullName + "\\plugins";
+                foreach(var file in Directory.GetFiles(str))
                 {
                     Assembly _Assembly = Assembly.LoadFile(file);
                     var types = _Assembly.GetTypes()?.ToList();
@@ -356,6 +357,12 @@ namespace FilmEditor
             }
         }
 
-
+        private void VolumeBar_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            var t = e.GetPosition(VolumeBar).X;
+            var width = VolumeBar.ActualWidth;
+            MediaPlayer.Volume = t/width;
+            VolumeBar.Value = MediaPlayer.Volume;
+        }
     }
 }

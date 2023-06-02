@@ -92,7 +92,7 @@
                             Name="Slider" Thumb.DragStarted="Slider_DragStarted" Thumb.DragCompleted="Slider_DragCompleted" ValueChanged="Slider_ValueChanged"/>
                 </StatusBarItem>
                 <StatusBarItem Grid.Column="5" HorizontalContentAlignment="Stretch">
-                    <ProgressBar Name="VolumeBar" VerticalAlignment="Center" Height="20" Maximum="1" Minimum="0"/>
+                    <ProgressBar Name="VolumeBar" VerticalAlignment="Center" Height="20" Maximum="1" Minimum="0" MouseLeftButtonDown="VolumeBar_MouseLeftButtonDown"/>
                 </StatusBarItem>
             </StatusBar>
         </Grid>

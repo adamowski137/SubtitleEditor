@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/stop.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/pause.png")]
 
 

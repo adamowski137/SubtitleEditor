@@ -15,6 +15,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Resources\pause.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+  <ItemGroup>
     <Resource Include="Resources\stop.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
@@ -28,12 +34,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\plugins\plugins.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Update="Resources\pause.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
   </ItemGroup>
 
 </Project>

@@ -25,7 +25,11 @@ namespace FilmEditor
         {
             string t2 = (string)input;
             TimeSpan timeSpan;
-            string[] formats = { "s\\.f", "ss\\.fff", "mm\\:ss\\.fff", "mm\\:ss\\.ff", "mm\\:ss\\.f", "hh\\:mm\\:ss\\.fff", "hh\\:mm\\:ss\\.ff", "hh\\:mm\\:ss\\.f", "hh\\:mm\\:ss", "mm\\:ss" };
+            string[] formats = 
+                {"%s", "%ss\\.f", "%ss\\.ff", "%s\\.fff", "%ss\\.f" , "%ss\\.ff", "%ss\\.fff", "%m\\:ss", "%mm\\:ss",
+                "%m\\:ss\\.f", "%m\\:ss\\.ff", "%m\\:ss\\.fff", "%mm\\:ss\\.f", "%mm\\:ss\\.ff", "%mm\\:ss\\.ff", "%mm\\:ss\\.fff",
+                "%h\\:mm\\:ss", "%h\\:mm\\:ss\\.f", "%h\\:mm\\:ss\\.ff", "%h\\:mm\\:ss\\.fff", "%hh\\:mm:\\:ss\\", "%hh\\:mm\\:ss\\.f",
+                "%hh\\:mm\\:ss\\.ff", "%hh\\:mm\\:ss\\.fff"};
             if (TimeSpan.TryParseExact(t2, formats, CultureInfo.InvariantCulture, out timeSpan))
             {
                 return timeSpan;

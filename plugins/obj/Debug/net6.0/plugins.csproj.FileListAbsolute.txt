@@ -22,3 +22,14 @@ C:\Users\adam\Desktop\projekty\SubtitleEditor\plugins\obj\Debug\net6.0\plugins.d
 C:\Users\adam\Desktop\projekty\SubtitleEditor\plugins\obj\Debug\net6.0\refint\plugins.dll
 C:\Users\adam\Desktop\projekty\SubtitleEditor\plugins\obj\Debug\net6.0\plugins.pdb
 C:\Users\adam\Desktop\projekty\SubtitleEditor\plugins\obj\Debug\net6.0\ref\plugins.dll
+C:\Users\adamz\OneDrive\Pulpit\projekty\SubtitleEditor\plugins\bin\Debug\net6.0\plugins.deps.json
+C:\Users\adamz\OneDrive\Pulpit\projekty\SubtitleEditor\plugins\bin\Debug\net6.0\plugins.dll
+C:\Users\adamz\OneDrive\Pulpit\projekty\SubtitleEditor\plugins\bin\Debug\net6.0\ref\plugins.dll
+C:\Users\adamz\OneDrive\Pulpit\projekty\SubtitleEditor\plugins\bin\Debug\net6.0\plugins.pdb
+C:\Users\adamz\OneDrive\Pulpit\projekty\SubtitleEditor\plugins\obj\Debug\net6.0\plugins.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\adamz\OneDrive\Pulpit\projekty\SubtitleEditor\plugins\obj\Debug\net6.0\plugins.AssemblyInfoInputs.cache
+C:\Users\adamz\OneDrive\Pulpit\projekty\SubtitleEditor\plugins\obj\Debug\net6.0\plugins.AssemblyInfo.cs
+C:\Users\adamz\OneDrive\Pulpit\projekty\SubtitleEditor\plugins\obj\Debug\net6.0\plugins.csproj.CoreCompileInputs.cache
+C:\Users\adamz\OneDrive\Pulpit\projekty\SubtitleEditor\plugins\obj\Debug\net6.0\plugins.dll
+C:\Users\adamz\OneDrive\Pulpit\projekty\SubtitleEditor\plugins\obj\Debug\net6.0\ref\plugins.dll
+C:\Users\adamz\OneDrive\Pulpit\projekty\SubtitleEditor\plugins\obj\Debug\net6.0\plugins.pdb

@@ -49,15 +49,17 @@ namespace SubR.Views
         public void Save(string path, ICollection<SubtitleRecord> subtitles)
         {
             Stream s = File.OpenWrite(path);
+            FileStreamOptions options = new FileStreamOptions();
+            StreamWriter streamWriter = new StreamWriter(s, Encoding.UTF8);
             int i = 1;
             foreach (var subtitle in subtitles)
             {
-                string tmp = $"{i++}\n" +
-                    $"{subtitle.ShowTime} --> {subtitle.HideTime}\n" +
-                    $"{subtitle.Text}\n\n";
-
-                s.Write(Encoding.ASCII.GetBytes(tmp));
+                streamWriter.WriteLine(i++);
+                streamWriter.WriteLine($"{subtitle.ShowTime} --> {subtitle.HideTime}");
+                streamWriter.WriteLine(subtitle.Text);
+                streamWriter.WriteLine();
             }
+            streamWriter.Close();   
             s.Close();
         }
     }
